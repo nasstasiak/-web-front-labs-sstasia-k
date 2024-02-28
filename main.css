@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(202, 240, 252); 
+    color: rgb(0, 92, 128); 
+    font-family: Arial; 
+    margin: 0px; "
+}
+header {
+    background-color: lightblue; 
+    color: rgb(47, 182, 186); 
+    padding: 10px; 
+    font-size: 16pt;
+}
+
+footer {
+    background-color: lightblue; 
+    color: rgb(47, 182, 186);
+    font-size: 16pt;
+    font-style: italic; 
+    padding: 5px; 
+    font-size: 12pt; 
+    text-align: right;
+}
