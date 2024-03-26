@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <title>Кузьмина Анастасия Станиславовна. Цитата</title>
+    <style>
+        div {
+            margin: 15px;
+        }
+        .citation {
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(to right bottom, red, orange, gold, green, blue, darkblue, purple);
+        }
+        .text {
+            color: aliceblue;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author {
+            color: antiquewhite;
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+        }
+
+        .citation1 {
+            border: 3px solid rgb(218, 93, 93);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px rgba(106, 38, 38, 0.168);
+            background: linear-gradient(rgb(254, 94, 94), rgb(255, 164, 164), rgb(254, 94, 94));
+    
+        }
+        .text1 {
+            color: aliceblue;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author1 {
+            color: rgb(168, 71, 71);
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.9;
+            margin-top: 30px;
+            margin-left: 40%;
+        }
+
+        .citation2 {
+            border: 5px solid rgb(93, 133, 168);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px rgba(40, 73, 100, 0.366);
+            background: radial-gradient(aliceblue, rgb(105, 148, 186));
+        }
+        .text2 {
+            color: rgb(30, 63, 91);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .author2 {
+            color: rgb(88, 102, 171);
+            text-align: end;
+            font-size: 30px;
+            opacity: 0.7;
+            margin-top: 30px;
+            margin-left: 55%;
+            text-shadow: 4px 3px 3px rgba(206, 228, 246, 0.849);
+
+        }
+
+        .citation3 {
+            border: 0px solid red;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(rgb(77, 77, 77), rgb(156, 148, 148), rgb(238, 228, 216) , rgb(156, 148, 148), rgb(77, 77, 77));
+        }
+        .text3 {
+            color: rgb(49, 49, 46);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10%;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .author3 {
+            color: antiquewhite;
+            text-align: center;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 10%;
+            text-shadow: 4px 3px 3px rgb(49, 49, 46);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .citation4 {
+            border: 10px solid rgb(81, 43, 43);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 5px rgba(54, 29, 29, 0.575);
+            background: rgb(159, 96, 96);
+        }
+        .text4 {
+            color: rgb(81, 43, 43);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10%;
+            font-family: 'Courier New', Courier, monospace;
+           
+        }
+        .author4 {
+            color: rgb(255, 208, 188);
+            text-align: right;
+            font-size: 30px;
+            opacity: 0.8;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 20px;
+        }
+
+
+        .citation5 {
+            border: 1px solid rgb(207, 200, 200);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px rgba(83, 79, 79, 0.401);
+            background: color-mix(in hsl shorter hue, gray 50%, black 50%)
+        }
+        .text5 {
+            color: rgb(207, 200, 200);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .author5 {
+            color: rgb(207, 200, 200);
+            text-align: left;
+            font-size: 20px;
+            opacity: 0.7;
+            margin-top: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: oblique;
+        }
+
+
+        .citation6 {
+            border: 5px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px rgba(86, 58, 2, 0.394);
+            background: linear-gradient(to left bottom, gold, antiquewhite );
+        }
+        .text6 {
+            color: rgb(170, 111, 2);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-family: cursive;
+            
+        }
+        .author6 {
+            color: rgb(170, 111, 2);
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 15px;
+            font-family: cursive;
+        }
+
+
+        .citation7 {
+            border: 0px solid rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 5px #0002;
+            background: radial-gradient(indigo, white);
+        }
+        .text7 {
+            color: lavender;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 10px 5px 5px indigo;
+        }
+        .author7 {
+            color: lavender;
+            text-align: center;
+            font-size: 25px;
+            opacity: 1;
+            margin-top: 30px;
+            margin-left: 10%;
+            text-shadow: 1px 1px 1px rgba(177, 177, 198, 0.414);
+        }
+
+
+        .citation8 {
+            border: 5px solid rgb(98, 231, 176);
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 10px 10px 5px rgba(24, 56, 43, 0.346);
+            background: rgb(251, 248, 241);
+        }
+        .text8 {
+            color: rgb(15, 60, 100);
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-style: italic;
+        }
+        .author8 {
+            color: red;
+            text-align: end;
+            font-size: 30px;
+            margin-top: 50px;
+            margin-bottom: 0px;
+            font-style: italic;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .citation9 {
+            border: 0.5px solid blue;
+            padding: 20px;
+            border-radius: 50px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(blue, lightblue);
+        }
+        .text9 {
+            color: rgb(255, 255, 255);
+            font-size: 40px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .author9 {
+            color: white;
+            text-align: end;
+            font-size: 30px;
+            opacity: 0.9;
+            margin-top: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+
+        .citation10 {
+            border: 5px solid salmon;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(to right, red, orange);
+        }
+        .text10 {
+            color: rgb(255, 246, 240);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+        }
+        .author10 {
+            color: antiquewhite;
+            text-align: right;
+            font-size: 25px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 30%;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header>
+
+    <main>
+        <div class="citation">
+            <div class="text">
+                Стремитесь не к успеху, а к ценностям, которые он дает.
+            </div>
+            <div class="author">
+                Альберт Эйнштейн
+            </div> 
+        </div>
+
+        <div class="citation1">
+            <div class="text1">
+                Своим успехом я обязана тому, что никогда не оправдывалась и не принимала оправданий от других.
+            </div>
+            <div class="author1">
+                Флоренс Найтингейл
+            </div> 
+        </div>
+
+        <div class="citation2">
+            <div class="text2">
+                Сложнее всего начать действовать, все остальное зависит только от упорства.
+            </div>
+            <div class="author2">
+                Амелия Эрхарт
+            </div> 
+        </div>
+
+        <div class="citation3">
+            <div class="text3">
+                Жизнь - это то, что с тобой происходит, пока ты строишь планы.
+            </div>
+            <div class="author3">
+                Джон Леннон            
+            </div> 
+        </div>
+
+        <div class="citation4">
+            <div class="text4">
+                Надо любить жизнь больше, чем смысл жизни.
+            </div>
+            <div class="author4">
+                Федор Достоевский
+            </div> 
+        </div>
+
+        <div class="citation5">
+            <div class="text5">
+                Логика может привести Вас от пункта А к пункту Б, а воображение — куда угодно.
+            </div>
+            <div class="author5">
+                Альберт Эйнштейн
+            </div> 
+        </div>
+
+        <div class="citation6">
+            <div class="text6">
+                Начинать всегда стоит с того, что сеет сомнения.
+            </div>
+            <div class="author6">
+                Борис Стругацкий
+            </div> 
+        </div>
+
+        <div class="citation7">
+            <div class="text7">
+                Настоящая ответственность бывает только личной.
+            </div>
+            <div class="author7">
+                Фазиль Искандер
+            </div> 
+        </div>
+
+        <div class="citation8">
+            <div class="text8">
+                Ваше время ограничено, не тратьте его, живя чужой жизнью.
+            </div>
+            <div class="author8">
+                Стив Джобс
+            </div> 
+        </div>
+
+        <div class="citation9">
+            <div class="text9">
+                Наука — это организованные знания, мудрость — это организованная жизнь.
+            </div>
+            <div class="author9">
+                Иммануил Кант
+            </div> 
+        </div>
+
+        <div class="citation10">
+            <div class="text10">
+                Либо вы управляете вашим днем, либо день управляет вами.
+            </div>
+            <div class="author10">
+                Джим Рон,<br>оратор и бизнес-тренер
+            </div> 
+        </div>
+
+
+    </main>
+    
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
