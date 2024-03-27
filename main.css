@@ -26,6 +26,20 @@ a {
     color: blue;
 }
 
+a:hover {
+    text-decoration: none;
+    color: salmon;
+    font-weight: bolder;
+    text-shadow: 4px 3px 3px rgba(181, 93, 83, 0.284);
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    opacity: 0.3;
+}
+
 main {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
