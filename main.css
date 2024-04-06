@@ -53,3 +53,18 @@ main {
     font-weight: bold;
     color: rgb(0, 92, 128); 
 }
+
+div.menu {
+    border: 3px solid rgb(80, 117, 197, 0.531);
+    border-radius: 15px;
+    background-color: rgba(114, 157, 250, 0.531);
+    width: 300px;
+    margin: 0 auto;
+
+}
+
+div.menu:hover {
+    border: 5px solid rgb(80, 117, 197);
+    background-color: rgb(114, 157, 250);
+    box-shadow: 0 0 15px rgba(0, 92, 128 ,0.5);
+}
