@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Лабораторная работа 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="dog.png" type="image/x-icon">
+    <style>
+        div {
+            width: 280px;
+            height: 50px;
+            background-color: rgba(215, 227, 250, 0.822);
+            border: 5px double;
+            border-radius: 15px;
+            padding: 10px;
+            margin: 15px;
+            font-size: 25px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .position-relative {
+            position: relative;
+            left: 145px;
+            top: -145px;
+            z-index: -1;
+        }
+        .position-relative:hover {
+            z-index: 1;
+        }
+
+        .position-absolute {
+            position: absolute;
+            left: 350px;
+        }
+        .position-absolute:hover {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            border: 5px solid;
+            background-color: rgb(203, 220, 251);
+            box-shadow: 0 0 15px rgba(0, 92, 128 ,0.5);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+    
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
