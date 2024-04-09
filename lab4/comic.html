@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Лабораторная работа 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="dog.png" type="image/x-icon">
+    <style>
+        
+        
+        div {
+            width: 280px;
+            height: 50px;
+            background-color: rgba(215, 227, 250, 0.822);
+            border: 5px double;
+            border-radius: 15px;
+            padding: 10px;
+            margin: 15px;
+            font-size: 25px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .picture {
+            margin-top: 0;
+            left: 22%;
+            position: absolute;
+            z-index: 1;
+            border: none;
+            background: none;
+            
+        }
+        .picture:hover {
+            z-index: -1;
+        }
+        
+
+        .cloud {
+            position: absolute;
+            border-radius: 50%;
+            border: 5px dotted #f0c5ff;
+            background-color: #ffecfbd3;
+            color: #333;
+            padding: 10px;
+            box-shadow: 10px 6px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #cloud1 {
+            width: 250px;
+            height: 50px;
+            top: 120px;
+            left: 460px;
+            
+        }
+
+        #cloud2 {
+            width: 214px;
+            height: 40px;
+            top: 175px;
+            left: 510px;
+            
+        }
+
+        #cloud3 {
+            width: 168px;
+            height: 30px;
+            top: 220px;
+            left: 580px;
+            
+        }
+
+        #cloud4 {
+            width: 112px;
+            height: 20px;
+            top: 265px;
+            left: 660px;
+            
+        }
+
+        #cloud5 {
+            width: 56px;
+            height: 10px;
+            top: 300px;
+            left: 730px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        
+        <div class="picture">
+            <img src="character.jpg" width="300%" >
+        </div>
+        
+        <div id="cloud5"  class="cloud"></div>
+        <div id="cloud4" class="cloud"></div>
+        <div id="cloud3" class="cloud"></div>
+        <div id="cloud2" class="cloud"></div>
+        <div id="cloud1" class="cloud">Хочу роллы(</div>
+        
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
