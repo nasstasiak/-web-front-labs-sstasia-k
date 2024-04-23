@@ -12,7 +12,8 @@
             let Pears = parseInt(document.getElementById('pears').value);
             let Oranges = parseInt(document.getElementById('oranges').value);
             let Melons = parseInt(document.getElementById('melons').value);
-            let result = Apples*100+Pears*80+Oranges*150+Melons*300;
+            let Grapefruits = parseInt(document.getElementById('grapefruit').value);
+            let result = Apples*100+Pears*80+Oranges*150+Melons*300+Grapefruits*320;
             let output = document.getElementById("output");
             output.textContent = 'Сумма вашей покупки: ' + result + ' рублей';
         }
@@ -22,6 +23,7 @@
             document.getElementById("pears").value = "";
             document.getElementById("oranges").value = "";
             document.getElementById("melons").value = "";
+            document.getElementById("grapefruit").value = "";
             document.getElementById("output").textContent = 'Здесь будет сумма вашей покупки';
         }
     </script>
@@ -80,6 +82,7 @@
             <label>Груши (80р/шт): <br><input type="number" placeholder="Укажите количество груш" id="pears" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
             <label>Апельсины (150р/шт):: <br><input type="number" placeholder="Укажите количество апельсинов" id="oranges" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
             <label>Дыни (300р/шт): <br><input type="number" placeholder="Укажите количество дынь" id="melons" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
+            <label>Грейпфрут (320р/шт): <br><input type="number" placeholder="Укажите количество грейпфрутов" id="grapefruit" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
             <input type="button" value="Рассчитать стоимость покупки" onclick="cartSum()" id="butt"><br>
             <div id="output">Здесь будет сумма вашей покупки</div>
             <input type="button" value="Очистить поля ввода" onclick="cartCleaner()" id="butt">
