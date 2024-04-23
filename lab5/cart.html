@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Лабораторная работа 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="dog.png" type="image/x-icon">
+    <script>
+        function cartSum() {
+            let Apples = parseInt(document.getElementById('apples').value);
+            let Pears = parseInt(document.getElementById('pears').value);
+            let Oranges = parseInt(document.getElementById('oranges').value);
+            let Melons = parseInt(document.getElementById('melons').value);
+            let result = Apples*100+Pears*80+Oranges*150+Melons*300;
+            let output = document.getElementById("output");
+            output.textContent = 'Сумма вашей покупки: ' + result + ' рублей';
+        }
+       
+        function cartCleaner() {
+            document.getElementById("apples").value = "";
+            document.getElementById("pears").value = "";
+            document.getElementById("oranges").value = "";
+            document.getElementById("melons").value = "";
+            document.getElementById("output").textContent = 'Здесь будет сумма вашей покупки';
+        }
+    </script>
+    <style>
+        div {
+            width: 300px;
+            background-color: rgba(200, 228, 255, 0.764);
+            border: 5px double;
+            border-radius: 15px;
+            padding: 10px;
+            margin: 15px auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1;
+        }
+        h2 {
+            margin: 5px;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 220px;
+            cursor: pointer;
+            margin: 5px auto ;
+            border: none;
+            box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.226);
+        }
+        #output {
+            width: 250px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: rgba(172, 211, 247, 0.764);
+            margin-top: 10px;
+            margin: 5px auto;
+        }
+        #butt {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            width: 250px;
+            height: 40px;
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div>
+            <h2>Корзина товаров</h2>
+            <label>Яблоки (100р/шт): <br><input type="number" placeholder="Укажите количество яблок" id="apples" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
+            <label>Груши (80р/шт): <br><input type="number" placeholder="Укажите количество груш" id="pears" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
+            <label>Апельсины (150р/шт):: <br><input type="number" placeholder="Укажите количество апельсинов" id="oranges" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
+            <label>Дыни (300р/шт): <br><input type="number" placeholder="Укажите количество дынь" id="melons" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
+            <input type="button" value="Рассчитать стоимость покупки" onclick="cartSum()" id="butt"><br>
+            <div id="output">Здесь будет сумма вашей покупки</div>
+            <input type="button" value="Очистить поля ввода" onclick="cartCleaner()" id="butt">
+        </div>
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
