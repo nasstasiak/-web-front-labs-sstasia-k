@@ -16,6 +16,33 @@
             let result = a + b;
             alert('Сумма ' +a+  ' и ' +b+ ' равна ' + result);
         }
+        function showDiff() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' +a+  ' и ' +b+ ' равна ' + result);
+        }
+        function showMult() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' +a+  ' и ' +b+ ' равна ' + result);
+        }
+        function showDiv() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Частное ' +a+  ' и ' +b+ ' равна ' + result);
+        }
         function showAuthor() {
             let author = 'Автор страницы:\n Кузьмина Анастасия Станиславовна';
             alert(author);
@@ -67,6 +94,10 @@
             margin-left: 180px;
         }
 
+        #author {
+            margin-left: 200px;
+        }
+
         #buttons {
             width: 625px;
         }
@@ -82,7 +113,10 @@
         <br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму введенных чисел</div>
-        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showDiff()">Найти разность введенных чисел</div><br>
+        <div class="message" onclick="showMult()">Найти произведение введенных чисел</div>
+        <div class="message" onclick="showDiv()">Найти частное введенных чисел</div><br>
+        <div class="message" onclick="showAuthor()" id="author">Узнать, кто автор страницы</div>
         
         <div id="buttons">
             <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'IndianRed', 'LemonChiffon')">
