@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Лабораторная работа 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const circles = document.querySelectorAll('.circle');
+         
+          circles.forEach(circle => {
+            circle.addEventListener('click', () => {
+              circle.style.width = '0';
+              circle.style.height = '0';
+              circle.style.opacity = '0';
+            });
+          });
+        });
+        function showCircles() {
+                  let circle1 = document.getElementById('circle1');
+                  circle1.style.width = '50px';
+                  circle1.style.height = '50px';
+                  circle1.style.opacity = 1;
+      
+                  let circle2 = document.getElementById('circle2');
+                  circle2.style.width = '100px';
+                  circle2.style.height = '100px';
+                  circle2.style.opacity = 1;
+      
+                  let circle3 = document.getElementById('circle3');
+                  circle3.style.width = '150px';
+                  circle3.style.height = '150px';
+                  circle3.style.opacity = 1;
+      
+                  let circle4 = document.getElementById('circle4');
+                  circle4.style.width = '100px';
+                  circle4.style.height = '100px';
+                  circle4.style.opacity = 1;
+      
+                  let circle5 = document.getElementById('circle5');
+                  circle5.style.width = '250px';
+                  circle5.style.height = '250px';
+                  circle5.style.opacity = 1;
+      
+                  let circle6 = document.getElementById('circle6');
+                  circle6.style.width = '200px';
+                  circle6.style.height = '200px';
+                  circle6.style.opacity = 1;
+      
+                  let circle7 = document.getElementById('circle7');
+                  circle7.style.width = '50px';
+                  circle7.style.height = '50px';
+                  circle7.style.opacity = 1;
+      
+                  let circle8 = document.getElementById('circle8');
+                  circle8.style.width = '90px';
+                  circle8.style.height = '90px';
+                  circle8.style.opacity = 1;
+      
+                  let circle9 = document.getElementById('circle9');
+                  circle9.style.width = '100px';
+                  circle9.style.height = '100px';
+                  circle9.style.opacity = 1;
+      
+                  let circle10 = document.getElementById('circle10');
+                  circle10.style.width = '190px';
+                  circle10.style.height = '190px';
+                  circle10.style.opacity = 1;
+              }
+      </script>
+      <style>
+        .circle {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          border-radius: 50%;
+          color: white;
+          text-align: center;
+          vertical-align: middle;
+          font-size: 20px;
+          font-family: 'Courier New', Courier, monospace;
+          font-weight: bold;
+          position: absolute;
+          transition: all 1s ease;
+          cursor: pointer;
+        }
+        
+        #circle1 {
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          top: 150px; 
+          left: 50px;
+          background-color: Crimson;
+        }
+        #circle2 {
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          top: 150px; 
+          left: 250px; 
+          background-color: RoyalBlue;
+        }
+        #circle3 {
+          width: 150px;
+          height: 150px;
+          line-height: 150px;
+          top: 250px; 
+          left: 150px; 
+          background-color: DarkOliveGreen;
+        }
+        #circle4 {
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          top: 350px; 
+          left: 350px; 
+          background-color: MediumOrchid;
+        }
+        #circle5 {
+          width: 250px;
+          height: 250px;
+          line-height: 250px;
+          top: 450px; 
+          left: 450px; 
+          background-color: DarkOrange;
+        }
+        #circle6 {
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          top: 500px; 
+          left: 100px; 
+          background-color: Gold;
+        }
+        #circle7 {
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          top: 650px; 
+          left: 350px; 
+          background-color: PaleVioletRed;
+        }
+        #circle8 {
+          width: 90px;
+          height: 90px;
+          line-height: 90px;
+          top: 250px; 
+          left: 550px; 
+          background-color: SlateGrey;
+        }
+        #circle9 {
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          top: 200px; 
+          left: 750px; 
+          background-color: BurlyWood;
+        }
+        #circle10 {
+          width: 190px;
+          height: 190px;
+          line-height: 190px;
+          top: 50px; 
+          left: 1050px; 
+          background-color: Teal;
+        }
+        #butt {
+                  background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+                  position: absolute;
+                  right: 45%;
+                  width: 250px;
+                  height: 40px;
+                  border-radius: 20px;
+                  border-style: dotted;
+                  box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                  color: rgb(0, 92, 128);
+                  font-weight: bold;
+                  cursor: pointer;
+              }
+          #butt:active {
+              background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+              width: 270px;
+              height: 60px;
+              border-radius: 40px;
+              border-style: dotted;
+              box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+              color: rgb(0, 92, 128);
+              font-weight: bold;
+              cursor: pointer;
+          }
+      </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="circle" id="circle1">1</div>
+    <div class="circle" id="circle2">2</div>
+    <div class="circle" id="circle3">3</div>
+    <div class="circle" id="circle4">4</div>
+    <div class="circle" id="circle5">5</div>
+    <div class="circle" id="circle6">6</div>
+    <div class="circle" id="circle7">7</div>
+    <div class="circle" id="circle8">8</div>
+    <div class="circle" id="circle9">9</div>
+    <div class="circle" id="circle10">10</div>
+    <input id="butt" type="button" value="Показать круги" onclick="showCircles()">
+    </main>
+      
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
