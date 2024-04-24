@@ -8,11 +8,11 @@
     <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
     <script>
         function cartSum() {
-            let Apples = parseInt(document.getElementById('apples').value);
-            let Pears = parseInt(document.getElementById('pears').value);
-            let Oranges = parseInt(document.getElementById('oranges').value);
-            let Melons = parseInt(document.getElementById('melons').value);
-            let Grapefruits = parseInt(document.getElementById('grapefruit').value);
+            let Apples = document.getElementById('apples').value;
+            let Pears = document.getElementById('pears').value;
+            let Oranges = document.getElementById('oranges').value;
+            let Melons = document.getElementById('melons').value;
+            let Grapefruits = document.getElementById('grapefruit').value;
             let result = Apples*100+Pears*80+Oranges*150+Melons*300+Grapefruits*320;
             let output = document.getElementById("output");
             output.textContent = 'Сумма вашей покупки: ' + result + ' рублей';
@@ -78,12 +78,11 @@
     <main>
         <div>
             <h2>Корзина товаров</h2>
-            <p>Если вы не планируете покупать продукт, введите <b>0</b>!!</p>
-            <label>Яблоки (100р/шт): <br><input type="number" placeholder="Укажите количество яблок" id="apples" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
-            <label>Груши (80р/шт): <br><input type="number" placeholder="Укажите количество груш" id="pears" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
-            <label>Апельсины (150р/шт):: <br><input type="number" placeholder="Укажите количество апельсинов" id="oranges" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
-            <label>Дыни (300р/шт): <br><input type="number" placeholder="Укажите количество дынь" id="melons" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
-            <label>Грейпфрут (320р/шт): <br><input type="number" placeholder="Укажите количество грейпфрутов" id="grapefruit" min="0" oninput="this.value = Math.abs(this.value)"></label><br>
+            <label>Яблоки (100р/шт): <br><input type="number" placeholder="Укажите количество яблок" id="apples" min="0" oninput="value = Math.abs(value)"></label><br>
+            <label>Груши (80р/шт): <br><input type="number" placeholder="Укажите количество груш" id="pears" min="0" oninput="value = Math.abs(value)"></label><br>
+            <label>Апельсины (150р/шт):: <br><input type="number" placeholder="Укажите количество апельсинов" id="oranges" min="0" oninput="value = Math.abs(value)"></label><br>
+            <label>Дыни (300р/шт): <br><input type="number" placeholder="Укажите количество дынь" id="melons" min="0" oninput="value = Math.abs(value)"></label><br>
+            <label>Грейпфрут (320р/шт): <br><input type="number" placeholder="Укажите количество грейпфрутов" id="grapefruit" min="0" oninput="value = Math.abs(value)"></label><br>
             <input type="button" value="Рассчитать стоимость покупки" onclick="cartSum()" id="butt"><br>
             <div id="output">Здесь будет сумма вашей покупки</div>
             <input type="button" value="Очистить поля ввода" onclick="cartCleaner()" id="butt">
