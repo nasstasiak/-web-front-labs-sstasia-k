@@ -20,6 +20,7 @@
             color: rgb(0, 92, 128);
             font-weight: bold;
             margin-top: 5px;
+            margin-bottom: 5px;
         }
         button:active {
             background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
@@ -37,6 +38,22 @@
             border-radius: 10px;
             width: 245px;
             height: 40px;
+            margin: 5px;
+        }
+        .rools {
+            margin: auto;
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%);
+            border-radius: 20px;
+            width: 420px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+            
+        }
+        li {
+            text-align: left;
             margin: 5px;
         }
     </style>
@@ -86,6 +103,17 @@
             document.getElementById('result').innerHTML = '';
             document.getElementById('user-number').value = '';
         }
+        function showRools() {
+                document.getElementById('show').style.display = 'none';
+                document.getElementById('hide').style.display = 'block';
+                document.getElementById('rools').style.display = 'block';
+               
+            }
+        function hideRools() {
+            document.getElementById('show').style.display = 'block';
+                document.getElementById('hide').style.display = 'none';
+                document.getElementById('rools').style.display = 'none';
+        }
     </script>
 </head>
 <body>
@@ -114,6 +142,25 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+        <div class="rools">
+            <div id="show">
+                <button onclick="showRools()">Правила игры</button>
+            </div>
+            <div id="hide" style="display: none;">
+                <button onclick="hideRools()">Скрыть правила игры</button>
+            </div>
+            <div id="rools" style="display: none;">
+                <h2>Правила игры:</h2>
+                <ol type="1">
+                    <li>Для начала игры нажмите кнопку "Сыграть в игру"</li>
+                    <li>Загадайте число из диапазона от 1 до 100</li>
+                    <li>Впишите это число в поле ввода</li>
+                    <li>Нажмите кнопку "Угадать"</li>
+                    <li>Следуйте подсказкам на экране</li>
+                    <li>Если вы выиграли, но хотите повторить игру, нажмите кнопку "Сыграть ещё раз"</li>
+                </ol>
             </div>
         </div>
     </main>
