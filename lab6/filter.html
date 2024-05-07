@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+        <title>Кузьмина Анастасия Станиславовна. Перербор цветов</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+        <style>
+            div {
+                text-align: center;
+                background-color: rgb(151, 201, 247);
+                border-radius: 20px;
+                height: 600px;
+                width: 400px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin: 5px auto;
+                transition: 1s;
+                padding-top: 5px;
+            }
+            button:hover{
+                cursor: pointer;
+            }
+            button:active {
+                background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+                width: 270px;
+                height: 60px;
+                border-radius: 40px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                cursor: grabbing;
+            }
+            select {
+                border-radius: 20px;
+                background-color: rgba(218, 233, 247, 0.904);
+                color: rgb(1, 55, 76);
+                font-weight: 200;
+                margin: 2px;
+            }
+            button {
+                background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+                width: 250px;
+                height: 40px;
+                border-radius: 20px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            img {
+                height: 500px;
+            }
+        </style>
+        <script>
+            function filter() {
+                let color = document.getElementById('wear-color').value;
+                let type = document.getElementById('wear-type').value;
+                let wear = document.getElementById('wear');
+
+                if (color == 'Черный' && type == 'Футболка') {
+                    wear.src = 'btshirt.png';
+                }
+                else if (color == 'Белый' && type == 'Футболка') {
+                    wear.src = 'wtshirt.png';
+                }
+                else if (color == 'Голубой' && type == 'Футболка') {
+                    wear.src = 'bluetshirt.png';
+                }
+                else if (color == 'Черный' && type == 'Платье') {
+                    wear.src = 'bd.png';
+                }
+                else if (color == 'Белый' && type == 'Платье') {
+                    wear.src = 'wd.png';
+                }
+                else if (color == 'Голубой' && type == 'Платье') {
+                    wear.src = 'blued.png';
+                }
+                else if (color == 'Черный' && type == 'Рубашка') {
+                    wear.src = 'bs.png';
+                }
+                else if (color == 'Белый' && type == 'Рубашка') {
+                    wear.src = 'ws.png';
+                }
+                else if (color == 'Голубой' && type == 'Рубашка') {
+                    wear.src = 'blues.png';
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+            <div>
+                Цвет одежды:
+                <select id="wear-color">
+                    <option>Черный</option>
+                    <option>Голубой</option>
+                    <option>Белый</option>
+                </select><br>
+                Тип одежды:
+                <select id="wear-type">
+                    <option>Платье</option>
+                    <option>Футболка</option>
+                    <option>Рубашка</option>
+                </select><br>
+                <button onclick="filter()">OK</button><br>
+                <img id="wear">
+            </div>
+        </main>
+
+        <footer>
+            &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>

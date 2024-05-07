@@ -18,6 +18,10 @@
             margin-top: 5px;
             margin-bottom: 5px;
             transition: 1s;
+            cursor: grab;
+        }
+        div:active {
+            cursor: grabbing;
         }
     </style>
     <script>
@@ -41,6 +45,11 @@
                     div.style.backgroundColor = 'rgb(85, 107, 47)';
                     document.getElementById('color-name').innerHTML = 'Зеленый';
                     div.style.color = 'rgb(144, 238, 144)';
+                }
+                else if (div.style.backgroundColor == 'rgb(85, 107, 47)') {
+                    div.style.backgroundColor = 'rgb(72, 61, 139)';
+                    document.getElementById('color-name').innerHTML = 'Фиолетовый';
+                    div.style.color = 'rgb(230, 230, 250)';
                 }
                 else {
                     div.style.backgroundColor = 'rgb(151, 201, 247)';
