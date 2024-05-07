@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Перербор цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+    <style>
+        div {
+            text-align: center;
+            background-color: rgb(151, 201, 247);
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            transition: 1s;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+                if (div.style.backgroundColor == 'rgb(151, 201, 247)') {
+                    div.style.backgroundColor = 'rgb(220, 20, 60)';
+                    document.getElementById('color-name').innerHTML = 'Красный';
+                    div.style.color = 'rgba(76, 19, 19, 0.8)';
+                }
+                else if (div.style.backgroundColor == 'rgb(220, 20, 60)') {
+                    div.style.backgroundColor = 'rgb(25, 25, 112)';
+                    document.getElementById('color-name').innerHTML = 'Синий';
+                    div.style.color = 'LightSteelBlue';
+                }
+                else if (div.style.backgroundColor == 'rgb(25, 25, 112)') {
+                    div.style.backgroundColor = 'rgb(255, 105, 180)';
+                    document.getElementById('color-name').innerHTML = 'Розовый';
+                    div.style.color = 'rgba(76, 43, 52, 0.8)';
+                }
+                else if (div.style.backgroundColor == 'rgb(255, 105, 180)') {
+                    div.style.backgroundColor = 'rgb(85, 107, 47)';
+                    document.getElementById('color-name').innerHTML = 'Зеленый';
+                    div.style.color = 'rgb(144, 238, 144)';
+                }
+                else {
+                    div.style.backgroundColor = 'rgb(151, 201, 247)';
+                    div.style.color = ' rgb(0, 92, 128)';
+                    document.getElementById('color-name').innerHTML = 'Голубой';
+                }
+            }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">Голубой</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+       
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
