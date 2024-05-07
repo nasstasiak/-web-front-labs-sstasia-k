@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+        <title>Кузьмина Анастасия Станиславовна. Корзина товаров</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+        <style>
+            
+            button:hover{
+                cursor: pointer;
+            }
+            button:active {
+                background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+                width: 270px;
+                height: 60px;
+                border-radius: 40px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                cursor: grabbing;
+            }
+            button {
+                background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+                width: 250px;
+                height: 40px;
+                border-radius: 20px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            input{
+                border-radius: 20px;
+                background-color: rgba(218, 233, 247, 0.904);
+                color: rgb(1, 55, 76);
+                font-weight: bold;
+                margin: 2px;
+                width: 100px;
+            }
+           
+        </style>
+        <script>
+            
+            function cartSum() {
+                let userbalance = document.getElementById('balance').value;
+                let balance = Math.max(userbalance, 0);
+                let Milk = document.getElementById('milk').value;
+                let Bread = document.getElementById('bread').value;
+                let Butter = document.getElementById('butter').value;
+                let Apples = document.getElementById('apples').value;
+                let Pears = document.getElementById('pears').value;
+                let Oranges = document.getElementById('oranges').value;
+                let Melons = document.getElementById('melons').value;
+                let Grapefruits = document.getElementById('grapefruit').value;
+                let result = Milk*90+Bread*50+Butter*150+Apples*100+Pears*80+Oranges*150+Melons*300+Grapefruits*320;
+                let output = document.getElementById("output");
+                output.textContent = 'Сумма вашей покупки: ' + result + ' рублей';
+                let message = document.getElementById('error');
+                if (balance == '') {
+                message.innerHTML = 'Ошибка: Введите ваш баланс';
+                }
+                else if (balance < result) {
+                    message.innerHTML = 'Ошибка: Недостаточно средств';
+                }
+                else if (Milk == 0 && Bread == 0 && Butter == 0 && Apples == 0 && Pears == 0 && Oranges == 0 && Melons == 0 && Grapefruits == 0) {
+                    message.innerHTML = 'Ошибка: Нужно выбрать хотя бы один товар';
+                }
+                else if (Milk < 0 || Bread < 0 || Butter < 0 || Apples < 0 || Pears < 0 || Oranges < 0 || Melons < 0 || Grapefruits < 0) {
+                    message.innerHTML = 'Ошибка: Количество товара не может быть отрицательным';
+                }
+                else {
+                    message.innerHTML = 'Ваша корзина успешно оформлена';
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+           Мой баланс:
+           <input id="balance" type="number" min="0">
+           рублей<br>
+           <table border="1" style="border-color: rgb(1, 55, 76); border-radius: 10px; text-align: center;">
+                <tr>
+                    <td></td>
+                    <td>Название</td>
+                    <td>Цена, рублей</td>
+                    <td>Количество</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Молоко</td>
+                    <td>90</td>
+                    <td><input id="milk" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Хлеб белый</td>
+                    <td>50</td>
+                    <td><input id="bread" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Масло, 200гр</td>
+                    <td>150</td>
+                    <td><input id="butter" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Яблоки</td>
+                    <td>100</td>
+                    <td><input id="apples" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Груши</td>
+                    <td>80</td>
+                    <td><input id="pears" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Апельсины</td>
+                    <td>150</td>
+                    <td><input id="oranges" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Дыни</td>
+                    <td>300</td>
+                    <td><input id="melons" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Грейпфрут</td>
+                    <td>320</td>
+                    <td><input id="grapefruit" type="number" min="0" oninput="value = Math.abs(value)"></td>
+                </tr>
+           </table>
+           <button onclick="cartSum()">OK</button>
+           <div id="output" style="margin: 5px;">Здесь будет сумма вашей покупки</div><br>
+           <div id="error"></div>
+        </main>
+        <footer>
+            &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
