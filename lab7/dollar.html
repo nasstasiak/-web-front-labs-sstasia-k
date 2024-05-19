@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Курс доллара</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+    <style>
+        #first {
+                text-align: center;
+                background-color: rgb(151, 201, 247);
+                border-radius: 20px;
+                width: 200px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin: 5px auto;
+                transition: 1s;
+                padding-top: 5px;
+                align-items: center;
+                align-content: center;
+            }
+        button {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button:hover {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            border-radius: 40px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input{
+                border-radius: 20px;
+                background-color: rgba(218, 233, 247, 0.904);
+                color: rgb(1, 55, 76);
+                font-weight: bold;
+                margin: 2px;
+                width: 210px;
+            }
+        #menu {
+            width: 500px;
+            text-align: center;
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%);
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+    </style>
+    <script>
+        function showExchange() {
+            const exchange = [92.2914, 92.5254, 92.3892, 92.3058, 92.4155, 92.5810, 92.7463, 93.2198, 93.7196, 93.4419];
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+                table.style.margin = 'auto';
+                table.style.borderRadius = '10px';
+                td.style.borderRadius = '5px';
+            }
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length;
+            average = average.toFixed(2);
+            let detail = document.getElementById('detail');
+            detail.innerText = `Среднее значение курса доллара: ${average}`;
+            let butt = document.querySelector('button');
+            butt.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div id="first">
+            <button onclick="showExchange()">Курс доллара</button>
+            <table border="1" id="dollar-table"></table>
+            <div id="detail"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
