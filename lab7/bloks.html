@@ -9,7 +9,7 @@
     <style>
         button {
             background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
-            width: 250px;
+            width: 450px;
             height: 40px;
             border-radius: 20px;
             border-style: dotted;
@@ -19,10 +19,8 @@
             margin-top: 5px;
             margin-bottom: 5px;
         }
-        button:active {
+        button:hover {
             background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
-            width: 270px;
-            height: 50px;
             border-radius: 40px;
             border-style: dotted;
             box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
@@ -39,6 +37,7 @@
                 width: 210px;
             }
         #menu {
+            width: 500px;
             text-align: center;
             background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%);
             border-radius: 20px;
@@ -47,13 +46,24 @@
             color: rgb(0, 92, 128);
             font-weight: bold;
             margin-top: 5px;
-            position: absolute;
         }
         main {
     margin: 10px 20px 60px;
-}
+        }
     </style>
     <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'rgb(102, 205, 170)';
+            newBlock.style.height = '40px';
+            newBlock.style.width = '200px';
+            newBlock.style.margin = '10px auto 10px auto';
+            newBlock.style.border = '5px solid rgb(0, 139, 139)';
+            newBlock.style.borderRadius = '20px';
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+
         function addNewBlocks() {
             let main = document.querySelector('main');
             let count = document.getElementById('count').value;
@@ -71,6 +81,89 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function add20_50() {
+            let main = document.querySelector('main');
+            for(let i = 20; i<=50; i+=2.5){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'rgb(102, 205, 170)';
+                newBlock.style.color = 'rgb(0, 128, 128)';
+                newBlock.style.margin = '5px auto 10px auto';
+                newBlock.style.border = '2.5px solid rgb(0, 139, 139)';
+                newBlock.style.height = '40px';
+                newBlock.style.width = '40px';
+                newBlock.style.textAlign = 'center';
+                newBlock.innerHTML = `${i}`;
+                
+                main.appendChild(newBlock);
+            }
+
+        }
+        function add10_80() {
+            let main = document.querySelector('main');
+            for(let i = 10; i>=-80; i-=3){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'rgb(143, 188, 143)';
+                newBlock.style.color = 'rgb(0, 128, 128)';
+                newBlock.style.width = '30px';
+                newBlock.style.height = '30px';
+                newBlock.style.margin = '1.8px';
+                newBlock.style.border = '5px solid rgb(0, 139, 139)';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '30px';
+                newBlock.style.display = 'inline-block';
+                
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
+        function addOpacity() {
+            let main = document.querySelector('main');
+            for(let i = 1; i<=10; i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'rgb(102, 205, 170)';
+                newBlock.style.color = 'rgb(0, 128, 128)';
+                newBlock.style.margin = '5px auto 10px auto';
+                newBlock.style.border = '5px solid rgb(0, 139, 139)';
+                newBlock.style.height = '40px';
+                newBlock.style.width = '200px';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.opacity = `${i * 10}%`;
+                newBlock.innerHTML = `${i}`;
+                
+                main.appendChild(newBlock);
+            }
+        }
+        function coloredCircles() {
+                
+                let main = document.querySelector('main');
+                let countCircles = document.getElementById('countCircles').value;
+                for(let i = countCircles; i>0; i--) {    
+                    let newBlock = document.createElement('div');
+                    newBlock.style.backgroundColor = 'rgb(143, 188, 143)';
+                    newBlock.style.color = 'rgb(0, 128, 128)';
+                    newBlock.style.width = '50px';
+                    newBlock.style.height = '50px';
+                    newBlock.style.margin = '1.8px';
+                    newBlock.style.border = '1.5px solid rgb(0, 139, 139)';
+                    newBlock.style.borderRadius = '50%';
+                    newBlock.style.textAlign = 'center';
+                    newBlock.style.lineHeight = '50px';
+                    newBlock.style.display = 'inline-block';
+                    
+                    newBlock.innerHTML = `${i}`;
+
+                    if (i % 2 === 0) {
+                        newBlock.style.backgroundColor = 'rgb(144, 238, 144)';
+                    } else {
+                        newBlock.style.backgroundColor = 'rgb(255, 99, 71)';
+                    }
+                    main.appendChild(newBlock);
+                }
+            }
+
     </script>
 </head>
 <body>
@@ -80,10 +173,15 @@
 
     <main>
         <div id="menu">
+            <button onclick="addNewBlock()">Добавить блок</button><br>
             <input type="number" placeholder="Введите количество блоков" min="0" oninput="value = Math.max(value, 0)" id="count">
-            <button onclick="addNewBlocks()">Добавить блок</button>
+            <button onclick="addNewBlocks()" style="width: 220px;">Добавить блоки</button>
+            <button onclick="add20_50()" style="width: 220px;">20 => 50</button>
+            <button onclick="add10_80()" style="width: 220px;">10 => -80</button>
+            <button onclick="addOpacity()">Полупрозрачные блоки</button>
+            <input type="number" placeholder="Введите количество кругов" min="0" oninput="value = Math.max(value, 0)" id="countCircles">
+            <button onclick="coloredCircles()" style="width: 220px;">Цветные круги</button><br>
         </div>
-        
     </main>
 
     <footer>
