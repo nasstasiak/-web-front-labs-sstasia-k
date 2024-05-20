@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. «Котировки акций компании Мосэнерго</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+    <style>
+        #first {
+                text-align: center;
+                background-color: rgb(151, 201, 247);
+                border-radius: 20px;
+                width: 200px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin: 5px auto;
+                transition: 1s;
+                padding-top: 5px;
+                align-items: center;
+                align-content: center;
+                padding: 5px;
+            }
+        button {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button:hover {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            border-radius: 40px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function showExchange() {
+            const date = ['17.05.2024', '16.05.2024', '15.05.2024', '14.05.2024', '13.05.2024', '10.05.2024', '08.05.2024', '07.05.2024', '06.05.2024',' 03.05.2024'];
+            const price = [3.47, 3.46, 3.43, 3.43, 3.34, 3.32, 3.29, 3.30, 3.32, 3.31];
+            let table = document.getElementById('quote-table');
+            for(let i = 0; i < price.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                let tdPrice = document.createElement('td');
+                let tdDiff = document.createElement('td');
+                
+
+                tdDate.innerText = date[i];
+                tdPrice.innerText = price[i];
+
+                if (i > 0) {
+                    let diff = price[i] - price[i - 1];
+                    tdDiff.innerText = diff.toFixed(2);
+                } 
+                else {
+                    tdDiff.innerText = '';
+                }
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.style.margin = 'auto';
+                table.style.marginBottom = '5px';
+                table.style.borderRadius = '10px';
+                tdDate.style.borderRadius = '5px';
+                tdPrice.style.borderRadius = '5px';
+                tdDiff.style.borderRadius = '5px';
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for(let i = 0; i < price.length; i++) {
+                sum += price[i];
+            }
+            let average = sum / price.length;
+            average = average.toFixed(2);
+
+            let detail = document.getElementById('detail');
+            detail.innerText = `Среднее значение курса акций: ${average}`;
+
+            let min = price[0];
+            let max = price[0];
+
+            for (let i = 1; i < price.length; i++) {
+                if (price[i] < min) {
+                    min = price[i];
+                }
+                if (price[i] > max) {
+                    max = price[i];
+                }
+            }
+
+            let detail2 = document.getElementById('detail2');
+            detail2.innerHTML = `Максимальное значение: ${max.toFixed(2)}`;
+            let detail3 = document.getElementById('detail3');
+            detail3.innerHTML = `Минимальное значение: ${min.toFixed(2)}`;
+
+            let button = document.querySelector('button');
+            button.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div id="first">
+            <button onclick="showExchange()">Курс акций Мосэнерго</button>
+            <table border="1" id="quote-table"></table>
+            <div id="detail" style="text-align: justify;"></div>
+            <div id="detail2" style="text-align: justify;"></div>
+            <div id="detail3" style="text-align: justify;"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
+   
