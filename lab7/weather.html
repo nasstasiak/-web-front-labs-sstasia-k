@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Прогноз погоды</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+    <style>
+        #first {
+                text-align: center;
+                background-color: rgb(151, 201, 247);
+                border-radius: 20px;
+                width: 400px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin: 5px auto;
+                transition: 1s;
+                padding-top: 5px;
+                align-items: center;
+                align-content: center;
+            }
+        button {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button:hover {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            border-radius: 40px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function getWeather(){
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    let t8 = json.hourly.temperature_2m[8];
+                    let t12 = json.hourly.temperature_2m[12];
+                    let t20 = json.hourly.temperature_2m[20];
+                    document.getElementById('t8').innerText = `Температура в 8 утра: ${t8} °C`;
+                    document.getElementById('t12').innerText = `Температура в 12 дня: ${t12} °C`;
+                    document.getElementById('t20').innerText = `Температура в 20 вечера: ${t20} °C`;
+                })     
+            }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div id="first">
+            <div>Прогноз погоды в Новосибирсе <br> на сегодняшний день</div>
+            <button onclick="getWeather()">Показать</button><br>
+            <div id="t8"></div>
+            <div id="t12"></div>
+            <div id="t20"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
