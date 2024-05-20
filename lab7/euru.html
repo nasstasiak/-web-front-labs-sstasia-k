@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. Курс евро</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
+    <style>
+        #first {
+                text-align: center;
+                background-color: rgb(151, 201, 247);
+                border-radius: 20px;
+                width: 200px;
+                border-style: dotted;
+                box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+                color: rgb(0, 92, 128);
+                font-weight: bold;
+                margin: 5px auto;
+                transition: 1s;
+                padding-top: 5px;
+                align-items: center;
+                align-content: center;
+            }
+        button {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        button:hover {
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%) ;
+            border-radius: 40px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input{
+                border-radius: 20px;
+                background-color: rgba(218, 233, 247, 0.904);
+                color: rgb(1, 55, 76);
+                font-weight: bold;
+                margin: 2px;
+                width: 210px;
+            }
+        #menu {
+            width: 500px;
+            text-align: center;
+            background: radial-gradient(rgba(151, 201, 247, 0.764), rgba(52, 129, 200, 0.673) 99%);
+            border-radius: 20px;
+            border-style: dotted;
+            box-shadow: 1px 6px 6px rgba(0, 0, 0, 0.226);
+            color: rgb(0, 92, 128);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+    </style>
+    <script>
+        function getEuroExchange(){
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    let Value = json.Valute.EUR.Value;
+                    let prevValue = json.Valute.EUR.Previous;
+                    let Date = json.Date;
+                    let prevDate = json.PreviousDate;
+                    let Difference = Value - prevValue;
+                    let diff ='';
+                    if (Difference > 0) {
+                        diff = "Курс евро поднялся на " + Math.abs(Difference);
+                    } 
+                    else if (Difference < 0) {
+                        diff = "Курс евро опустился " + Math.abs(Difference);
+                    }
+                    document.getElementById('Date').textContent = `Текущая дата: ${Date}`;
+                    document.getElementById('Value').textContent = `Текущий курс евро: ${Value}`;
+                    document.getElementById('prevDate').textContent = `Предыдущая дата: ${prevDate}`;
+                    document.getElementById('prevValue').textContent = `Курс евро за предыдущую дату: ${prevValue}`;
+                    document.getElementById('Difference').textContent = diff;
+                })
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <div id="first">
+            <button onclick="getEuroExchange()">Курс евро</button><br>
+            <div id="Date"></div>
+            <div id="Value"></div>
+            <div id="prevDate"></div>
+            <div id="prevValue"></div>
+            <div id="Difference"></div>
+            <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Кузьмина Анастасия, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
