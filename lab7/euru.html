@@ -85,9 +85,9 @@
                         diff = "Курс евро опустился " + Math.abs(Difference).toFixed(2);
                     }
                     document.getElementById('Date').textContent = `Текущая дата: ${Date}`;
-                    document.getElementById('Value').textContent = `Текущий курс евро: ${Value}`;
+                    document.getElementById('Value').textContent = `Текущий курс евро: ${Value.toFixed(2)}`;
                     document.getElementById('prevDate').textContent = `Предыдущая дата: ${prevDate}`;
-                    document.getElementById('prevValue').textContent = `Курс евро за предыдущую дату: ${prevValue}`;
+                    document.getElementById('prevValue').textContent = `Курс евро за предыдущую дату: ${prevValue.toFixed(2)}`;
                     document.getElementById('Difference').textContent = diff;
                 })
         }
