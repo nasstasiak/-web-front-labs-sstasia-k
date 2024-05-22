@@ -79,10 +79,10 @@
                     let Difference = Value - prevValue;
                     let diff ='';
                     if (Difference > 0) {
-                        diff = "Курс евро поднялся на " + Math.abs(Difference);
+                        diff = "Курс евро поднялся на " + Math.abs(Difference).toFixed(2);
                     } 
                     else if (Difference < 0) {
-                        diff = "Курс евро опустился " + Math.abs(Difference);
+                        diff = "Курс евро опустился " + Math.abs(Difference).toFixed(2);
                     }
                     document.getElementById('Date').textContent = `Текущая дата: ${Date}`;
                     document.getElementById('Value').textContent = `Текущий курс евро: ${Value}`;
