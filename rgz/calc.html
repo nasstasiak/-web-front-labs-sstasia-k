@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Кузьмина Анастасия Станиславовна. РГЗ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <style>
+        header{
+            margin: 0px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+        .col-md-4 {
+            width: 30%;
+            padding: 0 15px;
+        }
+        button {
+            width: 200px;
+        }    
+    </style>
+    <script>
+        function getTMT() {
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+            fetch(url)
+                .then(function(response){
+                    return response.json();
+                })
+                .then (function(json) {
+                    let rate = json.Valute.TMT.Value;
+                    let nominal = json.Valute.TMT.Nominal;
+
+                    let sum = document.getElementById('sum').value;
+                    let currencyFrom = document.getElementById('currencyFrom').value;
+                    let currencyTo = document.getElementById('currencyTo').value;
+                    let result = document.getElementById('result');
+
+                    if (currencyFrom == 'TMT' && currencyTo == 'RUB') {
+                        let output = (sum * rate) / nominal;
+                        result.innerText = output.toFixed(2) + " RUB";
+                    } 
+                    else if (currencyFrom == 'RUB' && currencyTo == 'TMT') {
+                        let output = (sum / rate) * nominal;
+                        result.innerText = output.toFixed(2) + ' TMT';
+                    } 
+                    else {
+                        result.innerText = 'Ошибка! Вы ввели одну и ту же валюту, пожалуйста, выберите другую комбинацию';
+                    }
+                });
+        }
+    </script>
+</head>
+<body style="background-color: #eee;">
+    <header class="header-main">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo" role="banner">
+                            <div id="iceberg">
+                                <a href="mainpage.html" id="iceberg">Айсберг Финанс</a>                                                
+                            </div>
+                        </div>
+                        <div class="slogan">
+                            Холодный расчет в личных финансах
+                        </div> 
+                    </div>
+                    <div>
+                        <div>
+                            <ul class="menu">
+                                <li><a href="news.html">Новости</a></li>
+                                <li><a href="calc.html">Курс валют</a></li>
+                                <li><a href="contacts.html">Контактные данные</a></li>
+                                <li><a href="video.html">Видео</a></li>
+                            </ul>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </header>
+    <main style="text-align: center; background-color: #eee;">
+        <h1>Калькулятор валют</h1>
+        <div style="text-align: center;">
+            <table style="margin: auto;">
+                <tr>
+                    <td>
+                        <label>Сумма: </label>
+                    </td>
+                    <td>
+                        <input type="number" id="sum" min="0" oninput="value = Math.max(value, 0)" style="width: 180px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Конвертировать из </div>
+                    </td>
+                    <td>
+                        <select id="currencyFrom">
+                            <option value="RUB">Российский рубль</option>
+                            <option value="TMT">Новый туркменский манат</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><div>Конвертировать в </div></td>
+                    <td>
+                        <select id="currencyTo">
+                            <option value="TMT">Новый туркменский манат</option>
+                            <option value="RUB">Российский рубль</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td  colspan="2"><button onclick="getTMT()" style="margin: 10px;">Конвертировать</button></td>
+                </tr>
+            </table> 
+            <div id="result"></div>
+        </div>
+        
+    </main>
+
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-middle">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-contacts">
+                            <p><img src="email.png" style="height: 16px; width: 16px;">&nbsp;info@icebergfinance.ru&emsp;
+                                <img src="phone.png" style="height: 16px; width: 16px;">&nbsp;+7(499) 290-02-52</p>
+                        </div> <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <table>
+                        <tr>
+                            <td><div class="copyright" style="width: 600px;">© Айсберг Финанс - 2024</div></td>
+                            <td style="text-align: right; width: 600px;"><img src="fabrica.png" class="fabrica" style="height: 30px;"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
