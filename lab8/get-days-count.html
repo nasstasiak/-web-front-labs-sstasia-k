@@ -6,7 +6,7 @@
     <title>Кузьмина Анастасия Станиславовна. Дата</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
-    <script src="lab8.js"></script>
+    <script src="get-days-count.js"></script>
     <style>
         div {
             width: 500px;
@@ -64,29 +64,15 @@
     </header>
 
     <main>
-       <div>
-            <p id="current-date1"></p>
-            <p id="current-date2"></p>
-            <p id="current-date3"></p>
-            <p id="current-date4"></p>
-            <p id="current-date5"></p>
-            <p id="current-date6"></p>
-       </div>
-       <div style="width: 300px;">
-            <p id="output1"></p>
-            <p id="output2"></p>
-            <p id="output3"></p>
-            <p id="output4"></p>
-        </div>
-        <div class="dayOfWeek" style="padding: 10px; width: 600px;">
-            День:
-            <input type="number" placeholder="Введите день" id="day" min="1" max="31">
-            Месяц:
-            <input type="number" placeholder="Введите месяц" id="month" min="1" max="12">
-            Год:
-            <input type="number" placeholder="Введите год" id="year" min="1699"><br>
-            <button onclick="getWeekDay()">Узнать день недели</button>
-            <div id="getWeekDay" style="background: none; border: none; box-shadow: none;"></div>
+        <div style="padding: 10px;">
+            <div style="background: none; border: none; box-shadow: none;">
+                Дата рождения: <input type="date" id="birthday">
+            </div>
+            <div style="background: none; border: none; box-shadow: none;">
+                <button onclick="showDaysCount()">Показать число дней</button>
+            </div>
+            <div id="count-days" style="background: none; border: none; box-shadow: none;"></div>
+            <button onclick="clearInput()">Очистить поля ввода и выводы</button>
         </div>
     </main>
 
