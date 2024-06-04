@@ -3,48 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content = "width = device-width, initial-scale=1.0">
-    <title>Кузьмина Анастасия Станиславовна. Дата</title>
+    <title>Кузьмина Анастасия Станиславовна. Часы</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../dog.png" type="image/x-icon">
     <script src="time.js"></script>
     <style>
         #time {
-            position: absolute;
-            top: 3px;
-            right: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            height: 36px;
+            margin: auto;
             font-size: 24px;
             color: #7a57fb;
             padding: 8px;
-            background-color: #e82d6b;
+            padding-bottom: 0;
+            background-color: #e82d6bb0;
             border-radius: 8px;
             box-shadow: 4px 2px 2px rgba(247, 247, 247, 0.3);
+            text-align: center;
+            width: 120px;
         }
         #seconds {
             position: absolute;
-            top: 25%;
+            top: 30%;
             left: 50%;
+            border-radius: 10px;
             transform: translate(-50%, -50%);
             font-size: 58px;
+            font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
             color: #7a57fb;
-            background-color: white;
+            background-color: #a28ee9;
             z-index: 1;
-            border: 3px solid orange;
+            border: 3px solid #e82d6b;
         }
-        .clock {
-            width: 300px;
-            height: 300px;
-            border: 10px solid rgb(59, 26, 179);
+        .clock-block {
+            width: 350px;
+            height: 350px;
+            border: 10px dashed rgb(59, 26, 179);
             border-radius: 50%;
             position: relative;
             margin: 50px auto;
             top: 50%;
             background-color: #7a57fb;
         }
-        #second-hand {
+        #hand {
             width: 50%;
-            height: 6px;
+            height: 8px;
             background: #e82d6b;
+            border-radius: 4px;
             z-index: 2;
             position: absolute;
             top: 50%;
@@ -57,13 +63,14 @@
 <body onload="showTime()">
     <header>
         НГТУ, ФБ, Лабораторная работа 8
-        <div id="time">00:00:00</div>
+        
     </header>
 
     <main>
+        <div id="time">00:00:00</div>
         <div id="seconds"></div>
-        <div class="clock">
-            <div id="second-hand"></div>
+        <div class="clock-block">
+            <div id="hand"></div>
         </div>
     </main>
 

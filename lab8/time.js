@@ -1,17 +1,14 @@
 function showTime() {
     let today = new Date();
-    let currentTime = today.toLocaleTimeString('ru-RU');
-    document.getElementById('time').innerHTML = currentTime;
+    let time = today.toLocaleTimeString('ru-RU');
+    document.getElementById('time').innerHTML = time;
 
     const seconds = today.getSeconds();
-    const secondsDisplay = document.getElementById('seconds');
-    const secondHand = document.getElementById('second-hand');
+    const display = document.getElementById('seconds');
+    const hand = document.getElementById('hand');
+    display.innerHTML = seconds.toString().padStart(2, '0');
 
-    // Обновление отображения секунд
-    secondsDisplay.innerHTML = seconds.toString().padStart(2, '0');
-
-    // Расчёт вращения стрелки
-    const secondsDegree = ((seconds / 60) * 360) + 90; // Смещение на 90 градусов для начала с 12:00
-    secondHand.style.transform = `rotate(${secondsDegree}deg)`;
+    const degree = ((seconds / 60) * 360) + 90; 
+    hand.style.transform = `rotate(${degree}deg)`;
 }
 setInterval(showTime, 1000);
