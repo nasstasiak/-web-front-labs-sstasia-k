@@ -6,7 +6,7 @@ function showTime() {
     const seconds = today.getSeconds();
     const display = document.getElementById('seconds');
     const hand = document.getElementById('hand');
-    display.innerHTML = seconds.toString().padStart(2, '0');
+    display.innerHTML = seconds;
 
     const degree = ((seconds / 60) * 360) + 90; 
     hand.style.transform = `rotate(${degree}deg)`;
