@@ -23,7 +23,7 @@ function ShowDate() {
     output2.innerHTML = `Текущий месяц: ${month[today.getMonth()]}`;
     output3.innerHTML = `Текущий год: ${today.getFullYear()}`;
     output4.innerHTML = `Текущий день недели: ${weekDay[today.getDay()]}`;
-;
+   
 }
 
 function getWeekDay() {
@@ -39,12 +39,14 @@ function getWeekDay() {
     dayOFWeek.textContent = `День недели: ${weekDay[getDay]}`;
 
     if (day < 1 || day > 31 || isNaN(day)) {
-        dayOFWeek.innerText = "Ошибка! Убедитесь, что поле заполнено корректно.";        
+        dayOFWeek.innerText = "Ошибка! Дата не входит в диапазон дат";        
     }
     else if (month < 0 || month > 12 || isNaN(month)) {
-        dayOFWeek.innerText = "Ошибка! Убедитесь, что поле заполнено корректно.";
+        dayOFWeek.innerText = "Ошибка! Месяц не входит в диапазон месяцев";
     }
-    else if (year < 1699 || isNaN(year)) {
-        dayOFWeek.innerText = "Ошибка! Убедитесь, что поле заполнено корректно.";        
+    else if (year < 1700 || isNaN(year)) {
+        dayOFWeek.innerText = "Ошибка! Год не входит в диапазон";        
     }  
 }
+
+
